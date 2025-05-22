@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produits - Quinca Plus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8e1;
+      color: #333;
+    }
+    header {
+      background-color: #a60000;
+      color: gold;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #d4af37;
+    }
+    .tabs button {
+      background: none;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #a60000;
+      font-weight: bold;
+    }
+    .tabs button.active {
+      background-color: #a60000;
+      color: gold;
+    }
+    .tab-content {
+      display: none;
+      padding: 2rem;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    footer {
+      background-color: #a60000;
+      color: gold;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  
+    @media (max-width: 768px) {
+      .tabs {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .tabs button {
+        width: 100%;
+        border-top: 1px solid #a60000;
+      }
+      ul {
+        padding-left: 1rem;
+      }
+      ul li {
+        font-size: 1rem;
+      }
+    }
+    </style>
+    
+</head>
+<body>
+
+<header>
+  <h1>Nos Produits</h1>
+</header>
+
+<div class="tabs">
+  <button class="tablink active" onclick="openTab(event, 'batiment')">Bâtiment</button>
+  <button class="tablink" onclick="openTab(event, 'ameublement')">Ameublement</button>
+  <button class="tablink" onclick="openTab(event, 'fixations')">Fixations</button>
+  <button class="tablink" onclick="openTab(event, 'colles')">Colles & Silicones</button>
+  <button class="tablink" onclick="openTab(event, 'peintures')">Peintures</button>
+  <button class="tablink" onclick="openTab(event, 'electroportatif')">Électroportatif</button>
+  <button class="tablink" onclick="openTab(event, 'autres')">Autres</button>
+</div>
+
+<div id="batiment" class="tab-content">
+  <h2>Bâtiment</h2>
+  <p><ul style="list-style: none; padding: 0;">
+  <li style="margin: 0.5rem 0; font-weight: 500;"><button onclick="toggleFixation()" style="background:none; border:none; color:#a60000; font-weight:bold; font-size:1rem; cursor:pointer;">Fixation</button><ul id="fixation-sub" style="display: none; list-style-type: disc; padding-left: 2rem;">
+  <li style="margin: 0.4rem 0;">Vis à bois</li>
+  <li style="margin: 0.4rem 0;">Vis auto-foreuse</li>
+  <li style="margin: 0.4rem 0;">Tirefond</li>
+  <li style="margin: 0.4rem 0;">Boulon TRCC</li>
+  <li style="margin: 0.4rem 0;">Goujon d’ancrage</li>
+  <li style="margin: 0.4rem 0;">Cheville métallique</li>
+  <li style="margin: 0.4rem 0;">Cheville plastique</li>
+</ul></li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Serrurerie</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Poignée de porte</li>
+</ul></p>
+</div>
+
+<div id="ameublement" class="tab-content active">
+  <h2>Ameublement</h2>
+  <p><ul style="list-style: none; padding: 0;">
+  <li style="margin: 0.5rem 0; font-weight: 500;">Aménagement d’angle de cuisine</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Charnières invisibles</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Charnières plates</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Console et crémaillère</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Coulisses</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Patin à clouer</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Patin à vis réglable</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Paumelles apparentes</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Pieds de meubles / pieds de table</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Plinthes</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Plan de travail</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Poignées et boutons</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Range épices / bouteilles</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Serrures de meubles</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Système de porte relevable</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Tac équerre</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Taquet d’étagère</li>
+  <li style="margin: 0.5rem 0; font-weight: 500;">Tiroir kit</li>
+</ul></p>
+</div>
+
+<div id="fixations" class="tab-content">
+  <h2>Fixations</h2>
+  <p>Vis, chevilles, boulonnerie et plus.</p>
+</div>
+
+<div id="colles" class="tab-content">
+  <h2>Colles & Silicones</h2>
+  <p>Colles puissantes, mastics, silicones pour tous vos besoins.</p>
+</div>
+
+<div id="peintures" class="tab-content">
+  <h2>Peintures</h2>
+  <p>Gamme de peintures intérieures et extérieures.</p>
+</div>
+
+<div id="electroportatif" class="tab-content">
+  <h2>Électroportatif</h2>
+  <p>Perceuses, visseuses, meuleuses et autres outils motorisés.</p>
+</div>
+
+<div id="autres" class="tab-content">
+  <h2>Autres</h2>
+  <p>Produits divers et accessoires complémentaires.</p>
+</div>
+
+<footer>
+  &copy; 2025 Quinca Plus. Tous droits réservés.
+</footer>
+
+<script>
+  function openTab(evt, tabName) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const links = document.querySelectorAll('.tablink');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    links.forEach(link => link.classList.remove('active'));
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+
+function toggleFixation() {
+  const sub = document.getElementById("fixation-sub");
+  sub.style.display = (sub.style.display === "none" || sub.style.display === "") ? "block" : "none";
+}
+
+function toggleSubMenu(id) {
+  const submenu = document.getElementById(id);
+  if (submenu) {
+    submenu.style.display = (submenu.style.display === "none" || submenu.style.display === "") ? "block" : "none";
+  }
+}
+</script>
+
+
+
+</body>
+</html>
