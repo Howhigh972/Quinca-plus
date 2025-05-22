@@ -3,30 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QUINCA PLUS</title>
+  <title>Produits - Quinca Plus</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(-45deg, #f9f9f9, #ececec, #ffffff, #f0f0f0);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      background-color: #f9f9f9;
       color: #333;
+      text-align: center;
     }
     .navbar {
       position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       width: 100%;
       background: #a60000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 2rem;
       z-index: 1000;
       flex-wrap: wrap;
     }
@@ -48,260 +46,97 @@
       flex-wrap: wrap;
       justify-content: center;
       flex: 1;
+      gap: 2rem;
     }
     .navbar a {
       color: gold;
       text-decoration: none;
       margin: 0.5rem 0.5rem 0.5rem 1rem;
       font-weight: bold;
-      position: relative;
       transition: color 0.3s ease;
     }
     .navbar a:hover {
       color: #fff;
     }
-    .navbar a::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: gold;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    .navbar a:hover::after {
-      transform: scaleX(1);
-    }
-    .scroll-title {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) perspective(800px);
-      font-size: 6rem;
-      color: #a60000;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-      transition: transform 0.1s ease-out, opacity 0.3s ease;
-      z-index: 900;
-      pointer-events: none;
-    }
     section {
       padding: 6rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
+      max-width: 1000px;
+      margin: auto;
     }
     h2 {
       text-align: center;
       color: #a60000;
       margin-bottom: 2rem;
     }
-    .btn {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background-color: #d4af37;
-      color: #a60000;
-      font-weight: bold;
-      text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-    footer {
-      background-color: #a60000;
-      color: gold;
-      text-align: center;
-      padding: 2rem;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-    }
-    #scroll-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #a60000;
-      color: gold;
-      border: none;
-      padding: 0.7rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      display: none;
-      z-index: 999;
-    }
-    #scroll-top:hover {
-      background-color: #d4af37;
-      color: #a60000;
-    }
-  @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-  .navbar::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
-      animation: lightMove 3s linear infinite;
-      z-index: 0;
-    }
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #a60000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      z-index: 1000;
-      flex-wrap: wrap;
-      overflow: hidden;
-    }
-    .navbar * {
-      position: relative;
-      z-index: 1;
-    }
-    @keyframes lightMove {
-      0% { left: -50%; }
-      100% { left: 100%; }
-    }
-.click-anim {
-      animation: clickFlash 0.4s ease;
-    }
-    @keyframes clickFlash {
-      0% { transform: scale(1); }
-      50% { transform: scale(0.95); background-color: #ffc; }
-      100% { transform: scale(1); }
-    }
-    .scroll-title.hidden {
-      display: none;
-    }
-  </style>
+  @media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+  .navbar .logo-title {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar .title-text {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .navbar nav {
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .scroll-title {
+    font-size: 3rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}
+</style>
 </head>
 <body>
 
 <div class="navbar">
   <div class="logo-title">
-    <img src="logo-transparent.png" alt="Logo Quinca Plus">
+    <a href="index.html"><img src="logo-transparent.png" alt="Logo Quinca Plus"></a>
     <div class="title-text">QUINCA PLUS</div>
   </div>
-  <nav>
-    <a href="#presentation"><i class="fa-solid fa-user"></i> Présentation</a>
-    <a href="produits.html"><i class="fa-solid fa-box"></i> Produits</a>
-
-    <a href="#localisation"><i class="fa-solid fa-location-dot"></i> Localisation</a>
-    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  <nav style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
+    <a href="index.html">Accueil</a>
+    <a href="#promotions">Promotions</a>
   </nav>
 </div>
 
-<div class="scroll-title" id="scrollTitle">QUINCA PLUS</div>
 
 
 
-<div style="height: 90vh;"></div>
 
 
-<section id="presentation">
-  <h2>Présentation</h2>
-  <p>
-    Fondée par <strong>Joëlle Tholozan</strong>, une femme audacieuse et visionnaire, QUINCA PLUS est née en 1994 d’un simple rêve et d’une volonté de fer. Dans un monde de la quincaillerie largement dominé par les hommes, elle s’est lancée seule, avec seulement un peu d’argent, beaucoup de courage et une détermination inébranlable. Sans appui, sans associé, elle a bâti pierre par pierre une entreprise solide, respectée et incontournable.
-  </p>
-  <p>
-    Joëlle n’a pas hérité d’un empire, elle l’a créé. À force de persévérance, elle a su gagner la confiance des artisans, des bricoleurs et des professionnels du bâtiment. Elle a sélectionné les meilleurs produits, conseillé chaque client avec humanité, et imposé sa vision du service et de la qualité.
-  </p>
-  <p>
-    Aujourd’hui, QUINCA PLUS est bien plus qu’une simple quincaillerie : c’est une entreprise familiale fière de ses racines, à l’écoute de ses clients, portée par des valeurs de travail, d’exigence et d’authenticité. Que vous soyez professionnel ou particulier, vous trouverez chez nous une sélection pointue de produits pour le bâtiment, l’ameublement, la fixation, la peinture, les colles, l’électroportatif et bien plus encore.
-  </p>
-  <p>
-    Joëlle Tholozan a su transformer un petit local et un stock modeste en un véritable acteur de confiance dans sa région. Son parcours est une preuve éclatante qu’avec du cœur, du talent et de l’audace, on peut déplacer des montagnes.
-  </p>
+
+
+
+
+<section id="promotions">
+  <h2>Nos Promotions</h2>
+  <p style="text-align: center; font-style: italic;">Découvrez nos meilleures offres du moment sur une sélection de produits !</p>
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
+    <div style="background: white; border: 2px solid #d4af37; border-radius: 10px; width: 250px; padding: 1rem; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  <img src="images/vis 4x40.jpg" alt="Produit Promo" style="width: 100%; border-radius: 6px;">
+  <h3 style="color: #a60000; margin: 1rem 0 0.5rem;">Vis à bois 4x40</h3>
+  <p style="margin: 0; font-weight: bold; color: #333;">Réf. VB4040</p>
+  <p style="color: #a60000; font-weight: bold; font-size: 1.2rem; margin-top: 0.5rem;">-25% de réduction</p>
+</div>
+<div style="background: white; border: 2px solid #d4af37; border-radius: 10px; width: 250px; padding: 1rem; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  <img src="images/plinte alu pvc.jpg" alt="Plinthe PVC" style="width: 100%; border-radius: 6px;">
+  <h3 style="color: #a60000; margin: 1rem 0 0.5rem;">Plinthe PVC alu cuisine</h3>
+  <p style="margin: 0; font-weight: bold; color: #333;">Réf. PLALU100</p>
+  <p style="color: #a60000; font-weight: bold; font-size: 1.2rem; margin-top: 0.5rem;">-15% de réduction</p>
+</div>
+</div>
 </section>
-
-<section id="produits">
-  <h2>Nos Produits</h2>
-  <p>Découvrez notre gamme complète : Bâtiment, Ameublement, Fixations, Colles & Silicones, Peintures, Électroportatif, Serrurerie et plus encore.</p>
-  <a href="#contact" class="btn">Nous contacter</a>
-</section>
-
-
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email : <a href="mailto:contact.quincaplus@gmail.com">contact.quincaplus@gmail.com</a></p>
-  <p>Téléphone : <a href="tel:+596596564026">0596 56 40 26</a></p>
-</section>
-
-<footer>
-  &copy; 2025 QUINCA PLUS — Tous droits réservés.
-</footer>
-
-<button id="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Haut</button>
-
-<script>
-  const title = document.getElementById('scrollTitle');
-  const scrollBtn = document.getElementById('scroll-top');
-  const sections = document.querySelectorAll('section');
-
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const rotateX = scrollY * 0.2;
-    const scale = 1 + scrollY / 1000;
-    const opacity = Math.max(1 - scrollY / 400, 0);
-    title.style.transform = `translate(-50%, -50%) perspective(800px) rotateX(${rotateX}deg) scale(${scale})`;
-    title.style.opacity = opacity;
-
-    scrollBtn.style.display = scrollY > 300 ? 'block' : 'none';
-
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.8) {
-        section.classList.add('visible');
-      }
-    });
-  });
-  // Animation au clic sur les boutons et liens du menu
-  document.querySelectorAll('a, .btn').forEach(el => {
-    el.addEventListener('click', () => {
-      el.classList.add('click-anim');
-      setTimeout(() => el.classList.remove('click-anim'), 400);
-    });
-  });
-
-  // Cacher le titre 3D quand la présentation entre en vue
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        title.classList.add('hidden');
-      } else {
-        title.classList.remove('hidden');
-      }
-    });
-  }, { threshold: 0.4 });
-
-  observer.observe(document.getElementById('presentation'));
-</script>
 
 </body>
 </html>
