@@ -44,11 +44,13 @@
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) perspective(1000px);
-      font-size: 5rem;
+      transform: translate(-50%, -50%) perspective(800px);
+      font-size: 6rem;
       color: #a60000;
-      font-weight: bold;
-      transition: transform 0.1s ease-out;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.1s ease-out, opacity 0.3s ease;
       z-index: 900;
       pointer-events: none;
     }
@@ -144,7 +146,9 @@
     const scrollY = window.scrollY;
     const rotateX = scrollY * 0.2;
     const scale = 1 + scrollY / 1000;
-    title.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${rotateX}deg) scale(${scale})`;
+    const opacity = Math.max(1 - scrollY / 400, 0);
+    title.style.transform = `translate(-50%, -50%) perspective(800px) rotateX(${rotateX}deg) scale(${scale})`;
+    title.style.opacity = opacity;
   });
 </script>
 
