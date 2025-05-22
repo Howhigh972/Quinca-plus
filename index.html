@@ -155,7 +155,39 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-  </style>
+  .navbar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: lightMove 3s linear infinite;
+      z-index: 0;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #a60000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+    .navbar * {
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes lightMove {
+      0% { left: -50%; }
+      100% { left: 100%; }
+    }
+</style>
 </head>
 <body>
 
@@ -175,7 +207,7 @@
 <div class="scroll-title" id="scrollTitle">QUINCA PLUS</div>
 
 <!-- Vide pour forcer le scroll avant l'apparition de la présentation -->
-<div style="height: 60vh;"></div>
+<!-- Suppression du faux scroll -->
 
 <section id="presentation">
   <h2>Présentation</h2>
