@@ -13,7 +13,9 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to bottom right, #f9f9f9, #ececec);
+      background: linear-gradient(-45deg, #f9f9f9, #ececec, #ffffff, #f0f0f0);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
       color: #333;
     }
     .navbar {
@@ -52,10 +54,26 @@
       text-decoration: none;
       margin: 0.5rem 0.5rem 0.5rem 1rem;
       font-weight: bold;
+      position: relative;
       transition: color 0.3s ease;
     }
     .navbar a:hover {
       color: #fff;
+    }
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: gold;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .navbar a:hover::after {
+      transform: scaleX(1);
     }
     .scroll-title {
       position: fixed;
@@ -95,10 +113,12 @@
       color: #a60000;
       font-weight: bold;
       text-decoration: none;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     .btn:hover {
       transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
     footer {
       background-color: #a60000;
@@ -129,6 +149,11 @@
     #scroll-top:hover {
       background-color: #d4af37;
       color: #a60000;
+    }
+  @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
