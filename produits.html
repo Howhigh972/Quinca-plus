@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produits - Quinca Plus</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #fff8e1;
+      background: linear-gradient(to bottom right, #f9f9f9, #ececec);
       color: #333;
     }
     header {
@@ -37,26 +36,45 @@
       cursor: pointer;
       color: #a60000;
       font-weight: bold;
+      transition: all 0.3s ease;
     }
-    .tabs button.active {
+    .tabs button:hover {
       background-color: #a60000;
       color: gold;
+      transform: scale(1.05);
     }
     .tab-content {
       display: none;
       padding: 2rem;
+      animation: fadeIn 0.4s ease;
     }
     .tab-content.active {
       display: block;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      padding: 0.3rem 0;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    ul li:hover {
+      transform: translateX(5px);
+      color: #a60000;
     }
     footer {
       background-color: #a60000;
       color: gold;
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
     }
-  
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @media (max-width: 768px) {
       .tabs {
         flex-direction: column;
@@ -66,15 +84,8 @@
         width: 100%;
         border-top: 1px solid #a60000;
       }
-      ul {
-        padding-left: 1rem;
-      }
-      ul li {
-        font-size: 1rem;
-      }
     }
-    </style>
-    
+  </style>
 </head>
 <body>
 
@@ -83,59 +94,60 @@
 </header>
 
 <div class="tabs">
-  <button class="tablink active" onclick="openTab(event, 'batiment')">Bâtiment</button>
-  <button class="tablink" onclick="openTab(event, 'ameublement')">Ameublement</button>
-  <button class="tablink" onclick="openTab(event, 'fixations')">Fixations</button>
-  <button class="tablink" onclick="openTab(event, 'colles')">Colles & Silicones</button>
-  <button class="tablink" onclick="openTab(event, 'peintures')">Peintures</button>
-  <button class="tablink" onclick="openTab(event, 'electroportatif')">Électroportatif</button>
-  <button class="tablink" onclick="openTab(event, 'autres')">Autres</button>
+  <button class="tablink" onclick="openTab(event, 'batiment')"><i class="fa-solid fa-building" style="margin-right: 0.5rem;"></i>Bâtiment</button>
+  <button class="tablink" onclick="openTab(event, 'ameublement')"><i class="fa-solid fa-couch" style="margin-right: 0.5rem;"></i>Ameublement</button>
+  <button class="tablink" onclick="openTab(event, 'colles')"><i class="fa-solid fa-fill-drip" style="margin-right: 0.5rem;"></i>Colles & Silicones</button>
+  <button class="tablink" onclick="openTab(event, 'peintures')"><i class="fa-solid fa-paint-roller" style="margin-right: 0.5rem;"></i>Peintures</button>
+  <button class="tablink" onclick="openTab(event, 'electroportatif')"><i class="fa-solid fa-tools" style="margin-right: 0.5rem;"></i>Électroportatif</button>
+  <button class="tablink" onclick="openTab(event, 'autres')"><i class="fa-solid fa-boxes-stacked" style="margin-right: 0.5rem;"></i>Autres</button>
+</div>
+
+<div id="default-message" style="text-align:center; padding: 3rem; font-size: 1.2rem; color: #a60000;">
+  <p>Bienvenue sur notre catalogue produits. Cliquez sur un onglet pour afficher une catégorie.</p>
 </div>
 
 <div id="batiment" class="tab-content">
   <h2>Bâtiment</h2>
-  <p><ul style="list-style: none; padding: 0;">
-  <li style="margin: 0.5rem 0; font-weight: 500;"><button onclick="toggleFixation()" style="background:none; border:none; color:#a60000; font-weight:bold; font-size:1rem; cursor:pointer;">Fixation</button><ul id="fixation-sub" style="display: none; list-style-type: disc; padding-left: 2rem;">
-  <li style="margin: 0.4rem 0;">Vis à bois</li>
-  <li style="margin: 0.4rem 0;">Vis auto-foreuse</li>
-  <li style="margin: 0.4rem 0;">Tirefond</li>
-  <li style="margin: 0.4rem 0;">Boulon TRCC</li>
-  <li style="margin: 0.4rem 0;">Goujon d’ancrage</li>
-  <li style="margin: 0.4rem 0;">Cheville métallique</li>
-  <li style="margin: 0.4rem 0;">Cheville plastique</li>
-</ul></li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Serrurerie</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Poignée de porte</li>
-</ul></p>
+  <ul>
+    <li>
+      <button onclick="toggleSubMenu('fixation-sub')" style="background:none; border:none; color:#a60000; font-weight:bold; font-size:1rem; cursor:pointer;">Fixation</button>
+      <ul id="fixation-sub" style="display: none; list-style-type: disc; padding-left: 2rem; margin-top: 0.5rem;">
+        <li>Vis à bois</li>
+        <li>Vis auto-foreuse</li>
+        <li>Tirefond</li>
+        <li>Boulon TRCC</li>
+        <li>Goujon d’ancrage</li>
+        <li>Cheville métallique</li>
+        <li>Cheville plastique</li>
+      </ul>
+    </li>
+    <li>Serrurerie</li>
+    <li>Poignée de porte</li>
+  </ul>
 </div>
 
-<div id="ameublement" class="tab-content active">
+<div id="ameublement" class="tab-content">
   <h2>Ameublement</h2>
-  <p><ul style="list-style: none; padding: 0;">
-  <li style="margin: 0.5rem 0; font-weight: 500;">Aménagement d’angle de cuisine</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Charnières invisibles</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Charnières plates</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Console et crémaillère</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Coulisses</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Patin à clouer</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Patin à vis réglable</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Paumelles apparentes</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Pieds de meubles / pieds de table</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Plinthes</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Plan de travail</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Poignées et boutons</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Range épices / bouteilles</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Serrures de meubles</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Système de porte relevable</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Tac équerre</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Taquet d’étagère</li>
-  <li style="margin: 0.5rem 0; font-weight: 500;">Tiroir kit</li>
-</ul></p>
-</div>
-
-<div id="fixations" class="tab-content">
-  <h2>Fixations</h2>
-  <p>Vis, chevilles, boulonnerie et plus.</p>
+  <ul>
+    <li>Aménagement d’angle de cuisine</li>
+    <li>Charnières invisibles</li>
+    <li>Charnières plates</li>
+    <li>Console et crémaillère</li>
+    <li>Coulisses</li>
+    <li>Patin à clouer</li>
+    <li>Patin à vis réglable</li>
+    <li>Paumelles apparentes</li>
+    <li>Pieds de meubles / pieds de table</li>
+    <li>Plinthes</li>
+    <li>Plan de travail</li>
+    <li>Poignées et boutons</li>
+    <li>Range épices / bouteilles</li>
+    <li>Serrures de meubles</li>
+    <li>Système de porte relevable</li>
+    <li>Tac équerre</li>
+    <li>Taquet d’étagère</li>
+    <li>Tiroir kit</li>
+  </ul>
 </div>
 
 <div id="colles" class="tab-content">
@@ -163,29 +175,22 @@
 </footer>
 
 <script>
-  function openTab(evt, tabName) {
-    const tabs = document.querySelectorAll('.tab-content');
-    const links = document.querySelectorAll('.tablink');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    links.forEach(link => link.classList.remove('active'));
-    document.getElementById(tabName).classList.add('active');
-    evt.currentTarget.classList.add('active');
-  }
-
-function toggleFixation() {
-  const sub = document.getElementById("fixation-sub");
-  sub.style.display = (sub.style.display === "none" || sub.style.display === "") ? "block" : "none";
+function openTab(evt, tabName) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tablink').forEach(el => el.classList.remove('active'));
+  document.getElementById(tabName).classList.add('active');
+  evt.currentTarget.classList.add('active');
+  const msg = document.getElementById('default-message');
+  if (msg) msg.style.display = 'none';
 }
-
 function toggleSubMenu(id) {
   const submenu = document.getElementById(id);
   if (submenu) {
     submenu.style.display = (submenu.style.display === "none" || submenu.style.display === "") ? "block" : "none";
+    submenu.style.animation = "fadeIn 0.3s ease";
   }
 }
 </script>
-
-
 
 </body>
 </html>
