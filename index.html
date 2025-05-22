@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quinca Plus</title>
+  <title>Quinca Plus - Accueil</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -14,42 +13,24 @@
       color: #333;
     }
     header {
-      background-color: #a60000;
-      color: gold;
       display: flex;
       align-items: center;
+      background-color: #a60000;
       padding: 1rem 2rem;
+      color: gold;
     }
     header img {
-      height: 60px;
+      height: 80px;
       margin-right: 1rem;
     }
     header h1 {
-      font-size: 2rem;
-      margin: 0;
+      font-size: 2.5rem;
       font-weight: 700;
-    }
-    nav {
-      background-color: #d4af37;
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      color: #a60000;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      color: gold;
-      transform: scale(1.05);
+      margin: 0;
     }
     .hero {
       text-align: center;
-      padding: 3rem 2rem;
-      animation: fadeIn 0.5s ease;
+      padding: 4rem 2rem;
     }
     .hero h2 {
       font-size: 2rem;
@@ -58,31 +39,30 @@
     }
     .hero p {
       max-width: 600px;
-      margin: auto;
+      margin: 0 auto 2rem;
       font-size: 1.1rem;
-      line-height: 1.6;
     }
-    footer {
+    .btn {
+      padding: 1rem 2rem;
+      background-color: #d4af37;
+      color: #a60000;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
       background-color: #a60000;
       color: gold;
+      transform: scale(1.05);
+    }
+    footer {
       text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        margin: 0.5rem 0;
-      }
+      padding: 2rem;
+      background-color: #a60000;
+      color: gold;
     }
   </style>
 </head>
@@ -90,21 +70,19 @@
 
 <header>
   <img src="logo.png" alt="Logo Quinca Plus">
-  <h1>Quinca Plus</h1>
+  <h1>QUINCA PLUS</h1>
 </header>
-
-<nav>
-  <a href="index.html"><i class="fa-solid fa-house" style="margin-right: 0.5rem;"></i>Accueil</a>
-  <a href="produits.html"><i class="fa-solid fa-boxes-stacked" style="margin-right: 0.5rem;"></i>Produits</a>
-</nav>
 
 <section class="hero">
   <h2>Entreprise familiale depuis 1994</h2>
-  <p>Quinca Plus est une entreprise familiale fondée par une femme visionnaire dans un monde d'hommes. Depuis plus de 30 ans, nous proposons une sélection rigoureuse de produits de quincaillerie pour le bâtiment, l'ameublement, et bien plus encore. Notre expertise locale et notre passion font notre force.</p>
+  <p>
+    Fondée par une femme audacieuse et visionnaire, Quinca Plus a su s'imposer dans un univers technique dominé par les hommes. Aujourd’hui, nous sommes fiers de proposer une large gamme de produits de qualité pour le bâtiment, l’ameublement, les fixations, la peinture, et bien plus encore.
+  </p>
+  <a href="produits.html" class="btn">Voir nos produits</a>
 </section>
 
 <footer>
-  &copy; 2025 Quinca Plus. Tous droits réservés.
+  &copy; 2025 Quinca Plus — Tous droits réservés.
 </footer>
 
 </body>
