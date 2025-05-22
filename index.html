@@ -1,94 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quinca Plus</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #fff8e1;
+      background: linear-gradient(to bottom right, #f9f9f9, #ececec);
       color: #333;
-      line-height: 1.6;
     }
     header {
       background-color: #a60000;
       color: gold;
-      padding: 1rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 1rem 2rem;
     }
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-    .logo-container img {
-      height: 120px;
+    header img {
+      height: 60px;
       margin-right: 1rem;
     }
-    .logo-container h1 {
-      font-size: 4rem;
-      font-weight: 700;
+    header h1 {
+      font-size: 2rem;
       margin: 0;
-      color: gold;
-    }
-    header p {
-      width: 100%;
-      text-align: center;
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
+      font-weight: 700;
     }
     nav {
       background-color: #d4af37;
-      padding: 1rem 0;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
     }
     nav a {
-      color: #a60000;
-      margin: 0 1.5rem;
+      margin: 0 1rem;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: bold;
+      color: #a60000;
+      transition: all 0.3s ease;
     }
-    .container {
-      padding: 3rem 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    nav a:hover {
+      color: gold;
+      transform: scale(1.05);
     }
-    .container h2 {
+    .hero {
       text-align: center;
+      padding: 3rem 2rem;
+      animation: fadeIn 0.5s ease;
+    }
+    .hero h2 {
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       color: #a60000;
     }
-    .produits {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .produit {
-      background-color: #fff;
-      border: 2px solid #d4af37;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 1rem;
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-    .produit:hover {
-      transform: scale(1.03);
-    }
-    .produit img {
-      max-width: 100%;
-      border-radius: 8px;
-      height: auto;
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
     footer {
       background-color: #a60000;
@@ -97,66 +69,43 @@
       padding: 2rem 1rem;
       margin-top: 3rem;
     }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
-      <img src="logo.png" alt="Logo Quinca Plus">
-      <h1>QUINCA PLUS</h1>
-    </div>
-    <p>Votre partenaire en quincaillerie de qualité</p>
-  </header>
+<header>
+  <img src="logo.png" alt="Logo Quinca Plus">
+  <h1>Quinca Plus</h1>
+</header>
 
-  <nav>
-    <a href="#presentation">Présentation</a>
-    <a href="produits.html">Produits</a><a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="index.html"><i class="fa-solid fa-house" style="margin-right: 0.5rem;"></i>Accueil</a>
+  <a href="produits.html"><i class="fa-solid fa-boxes-stacked" style="margin-right: 0.5rem;"></i>Produits</a>
+</nav>
 
-  <div class="container">
-    <section id="presentation">
-      <h2>Présentation de l'entreprise</h2>
-      <p><strong>Quinca Plus</strong> est bien plus qu’une simple entreprise de quincaillerie — c’est une aventure familiale portée par la passion, le courage et la volonté de briser les codes.</p>
-      <p>Fondée en <strong>1994</strong> par une femme déterminée dans un secteur majoritairement masculin, Quinca Plus s’est rapidement imposée comme une référence grâce à sa rigueur, son savoir-faire et son sens du service. Ce défi audacieux, relevé avec force et persévérance, est devenu une véritable fierté familiale et une source d'inspiration pour de nombreuses générations.</p>
-      <p>Installée au cœur de son territoire, l’entreprise propose depuis plus de 30 ans une <strong>large gamme de produits de quincaillerie</strong> sélectionnés pour leur fiabilité, leur durabilité et leur qualité. Des paumelles robustes aux charnières décoratives, Quinca Plus accompagne aussi bien les professionnels exigeants que les particuliers passionnés de bricolage.</p>
-      <p>Chaque pièce vendue porte en elle l’héritage d’une entreprise construite avec le cœur, portée par des valeurs humaines : <strong>authenticité, engagement, et excellence</strong>.</p>
-      <p>Aujourd’hui encore, l’esprit familial et l’audace de sa fondatrice résonnent dans chaque conseil donné, chaque client satisfait, chaque projet concrétisé. Bienvenue chez Quinca Plus : là où la tradition rencontre la solidité.</p>
-    </section>
+<section class="hero">
+  <h2>Entreprise familiale depuis 1994</h2>
+  <p>Quinca Plus est une entreprise familiale fondée par une femme visionnaire dans un monde d'hommes. Depuis plus de 30 ans, nous proposons une sélection rigoureuse de produits de quincaillerie pour le bâtiment, l'ameublement, et bien plus encore. Notre expertise locale et notre passion font notre force.</p>
+</section>
 
-    <section id="produits">
-      <h2>Nos produits</h2>
-      <div class="produits">
-        <div class="produit">
-          <img src="image1.jpg" alt="Produit 1">
-          <h3>Paumelle renforcée</h3>
-          <p>Paumelle en acier traité, parfaite pour vos installations robustes.</p>
-        </div>
-        <div class="produit">
-          <img src="image2.jpg" alt="Produit 2">
-          <h3>Charnière décorative</h3>
-          <p>Idéale pour les portes élégantes, finition dorée.</p>
-        </div>
-      </div>
-    
-    </section>
-
-    <section id="contact" style="margin-top: 4rem;">
-      <h2>Contact</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-        Vous pouvez nous contacter par téléphone au <strong>0596 56 40 26</strong> ou par email à 
-        <a href="mailto:contact.quincaplus@gmail.com">contact.quincaplus@gmail.com</a>.
-      </p>
-      <div style="margin-top: 2rem; text-align: center;">
-        <h3>Nous situer</h3>
-        
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2025 Quinca Plus. Tous droits réservés.
-  </footer>
+<footer>
+  &copy; 2025 Quinca Plus. Tous droits réservés.
+</footer>
 
 </body>
 </html>
