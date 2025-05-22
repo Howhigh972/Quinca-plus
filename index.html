@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produits - Quinca Plus</title>
+  <title>QUINCA PLUS</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #f9f9f9;
+      background: linear-gradient(to bottom right, #f9f9f9, #ececec);
       color: #333;
-      text-align: center;
     }
     .navbar {
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
       width: 100%;
       background: #a60000;
       display: flex;
@@ -46,7 +46,6 @@
       flex-wrap: wrap;
       justify-content: center;
       flex: 1;
-      gap: 2rem;
     }
     .navbar a {
       color: gold;
@@ -58,86 +57,166 @@
     .navbar a:hover {
       color: #fff;
     }
+    .scroll-title {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) perspective(800px);
+      font-size: 6rem;
+      color: #a60000;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.1s ease-out, opacity 0.3s ease;
+      z-index: 900;
+      pointer-events: none;
+    }
     section {
       padding: 6rem 2rem;
       max-width: 1000px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     h2 {
       text-align: center;
       color: #a60000;
       margin-bottom: 2rem;
     }
-  @media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    text-align: center;
-  }
-  .navbar .logo-title {
-    flex-direction: column;
-    align-items: center;
-  }
-  .navbar .title-text {
-    font-size: 1.3rem;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
-  .navbar nav {
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  .scroll-title {
-    font-size: 3rem;
-    text-align: center;
-    transform: translate(-50%, -50%);
-  }
-}
-</style>
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #d4af37;
+      color: #a60000;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #a60000;
+      color: gold;
+      text-align: center;
+      padding: 2rem;
+    }
+    #scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #a60000;
+      color: gold;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      display: none;
+      z-index: 999;
+    }
+    #scroll-top:hover {
+      background-color: #d4af37;
+      color: #a60000;
+    }
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        text-align: center;
+      }
+      .navbar .logo-title {
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar .title-text {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+      .navbar nav {
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+      .scroll-title {
+        font-size: 3rem;
+        text-align: center;
+        transform: translate(-50%, -50%);
+      }
+    }
+  </style>
 </head>
 <body>
 
 <div class="navbar">
   <div class="logo-title">
-    <a href="index.html"><img src="logo-transparent.png" alt="Logo Quinca Plus"></a>
+    <img src="logo-transparent.png" alt="Logo Quinca Plus">
     <div class="title-text">QUINCA PLUS</div>
   </div>
-  <nav style="flex: 1; display: flex; justify-content: center; gap: 2rem;">
-    <a href="index.html">Accueil</a>
-    <a href="#promotions">Promotions</a>
+  <nav>
+    <a href="#presentation"><i class="fa-solid fa-user"></i> Présentation</a>
+    <a href="#produits"><i class="fa-solid fa-box"></i> Produits</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </nav>
 </div>
 
+<div class="scroll-title" id="scrollTitle">QUINCA PLUS</div>
 
-
-
-
-
-
-
-
-
-<section id="promotions">
-  <h2>Nos Promotions</h2>
-  <p style="text-align: center; font-style: italic;">Découvrez nos meilleures offres du moment sur une sélection de produits !</p>
-  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
-    <div style="background: white; border: 2px solid #d4af37; border-radius: 10px; width: 250px; padding: 1rem; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-  <img src="images/vis 4x40.jpg" alt="Produit Promo" style="width: 100%; border-radius: 6px;">
-  <h3 style="color: #a60000; margin: 1rem 0 0.5rem;">Vis à bois 4x40</h3>
-  <p style="margin: 0; font-weight: bold; color: #333;">Réf. VB4040</p>
-  <p style="color: #a60000; font-weight: bold; font-size: 1.2rem; margin-top: 0.5rem;">-25% de réduction</p>
-</div>
-<div style="background: white; border: 2px solid #d4af37; border-radius: 10px; width: 250px; padding: 1rem; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-  <img src="images/plinte alu pvc.jpg" alt="Plinthe PVC" style="width: 100%; border-radius: 6px;">
-  <h3 style="color: #a60000; margin: 1rem 0 0.5rem;">Plinthe PVC alu cuisine</h3>
-  <p style="margin: 0; font-weight: bold; color: #333;">Réf. PLALU100</p>
-  <p style="color: #a60000; font-weight: bold; font-size: 1.2rem; margin-top: 0.5rem;">-15% de réduction</p>
-</div>
-</div>
+<section id="presentation">
+  <h2>Présentation</h2>
+  <p>Fondée en 1994 par Joëlle Tholozan, QUINCA PLUS est une entreprise familiale martiniquaise de quincaillerie qui s’est imposée dans un univers d’hommes grâce au courage et à la détermination d’une femme visionnaire. Partie de rien, avec peu de moyens mais une passion immense pour le métier, elle a su construire un commerce de proximité solide, réputé pour son sérieux et sa relation client.</p>
+  <p>Depuis plus de 30 ans, QUINCA PLUS accompagne particuliers et professionnels avec une large gamme de produits pour le bâtiment, l’ameublement, la fixation, les colles, les peintures et bien plus. Aujourd’hui encore, l’entreprise reste fidèle à ses valeurs : service, qualité, authenticité.</p>
 </section>
 
+<section id="produits">
+  <h2>Nos Produits</h2>
+  <p>Retrouvez nos produits par catégorie : bâtiment, ameublement, fixations, colles et silicones, peintures, électroportatif, serrurerie et autres.</p>
+  <a href="produits.html" class="btn">Voir nos produits</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email : <a href="mailto:contact.quincaplus@gmail.com">contact.quincaplus@gmail.com</a></p>
+  <p>Téléphone : <a href="tel:+596596564026">0596 56 40 26</a></p>
+</section>
+
+<footer>
+  &copy; 2025 QUINCA PLUS — Tous droits réservés.
+</footer>
+
+<button id="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Haut</button>
+
+<script>
+  const title = document.getElementById('scrollTitle');
+  const scrollBtn = document.getElementById('scroll-top');
+  const sections = document.querySelectorAll('section');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const rotateX = scrollY * 0.2;
+    const scale = 1 + scrollY / 1000;
+    const opacity = Math.max(1 - scrollY / 400, 0);
+    title.style.transform = `translate(-50%, -50%) perspective(800px) rotateX(${rotateX}deg) scale(${scale})`;
+    title.style.opacity = opacity;
+
+    scrollBtn.style.display = scrollY > 300 ? 'block' : 'none';
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        section.classList.add('visible');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
