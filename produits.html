@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nos Produits - Quinca Plus</title>
+  <title>Produits - Quinca Plus</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -12,135 +13,110 @@
       background-color: #f9f9f9;
       color: #333;
     }
-    header {
-      background-color: #a60000;
-      padding: 1rem 2rem;
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #a60000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    .navbar .logo-title {
       display: flex;
       align-items: center;
+    }
+    .navbar img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+    .navbar .title-text {
+      font-size: 1.5rem;
+      font-weight: 700;
       color: gold;
     }
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    header img {
-      height: 70px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin: 0;
-      text-transform: uppercase;
-    }
-    nav {
-      background-color: #d4af37;
-      padding: 0.5rem 2rem;
+    .navbar nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      flex: 1;
     }
-    nav a {
-      color: #a60000;
+    .navbar a {
+      color: gold;
       text-decoration: none;
+      margin: 0.5rem 0.5rem 0.5rem 1rem;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #fff;
     }
     section {
-      padding: 2rem;
+      padding: 6rem 2rem;
       max-width: 1000px;
       margin: auto;
     }
     h2 {
+      text-align: center;
       color: #a60000;
-      border-bottom: 2px solid #d4af37;
-      padding-bottom: 0.5rem;
-    }
-    .categorie {
       margin-bottom: 2rem;
-    }
-    .sous-categories {
-      display: none;
-      margin-top: 1rem;
-      padding-left: 1rem;
-    }
-    .categorie.active .sous-categories {
-      display: block;
-    }
-    .categorie h3 {
-      cursor: pointer;
-      color: #a60000;
-    }
-    .categorie h3:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<header>
+<div class="navbar">
   <div class="logo-title">
     <img src="logo-transparent.png" alt="Logo Quinca Plus">
-    <h1>QUINCA PLUS</h1>
+    <div class="title-text">QUINCA PLUS</div>
   </div>
-</header>
-
-<nav>
-  <a href="#batiment">Bâtiment</a>
-  <a href="#ameublement">Ameublement</a>
-  <a href="#fixations">Fixations</a>
-  <a href="#colles">Colles & Silicones</a>
-  <a href="#peintures">Peintures</a>
-  <a href="#electro">Électroportatif</a>
-  <a href="#serrurerie">Serrurerie</a>
-  <a href="#autres">Autres</a>
-</nav>
+  <nav>
+    <a href="#batiment">Bâtiment</a>
+    <a href="#ameublement">Ameublement</a>
+    <a href="#fixations">Fixations</a>
+    <a href="#colles">Colles & Silicones</a>
+    <a href="#peintures">Peintures</a>
+    <a href="#electro">Électroportatif</a>
+    <a href="#serrurerie">Serrurerie</a>
+    <a href="#autres">Autres</a>
+  </nav>
+</div>
 
 <section id="batiment">
-  <div class="categorie">
-    <h2>Bâtiment</h2>
-    <h3 onclick="toggle('bat-sous')">Voir les sous-catégories</h3>
-    <div class="sous-categories" id="bat-sous">
-      <p>Fixation</p>
-      <p>Serrurerie</p>
-      <p>Poignée de porte</p>
-    </div>
-  </div>
+  <h2>Bâtiment</h2>
+  <!-- Contenu à venir -->
 </section>
-
 <section id="ameublement">
-  <div class="categorie">
-    <h2>Ameublement</h2>
-    <h3 onclick="toggle('ameublement-sous')">Voir les sous-catégories</h3>
-    <div class="sous-categories" id="ameublement-sous">
-      <p>Aménagement d’angle de cuisine</p>
-      <p>Charnières invisibles</p>
-      <p>Charnières plates</p>
-      <p>Console et crémaillère</p>
-      <p>Coulisses</p>
-      <p>Patin à clouer</p>
-      <p>Patin à vis réglable</p>
-      <p>Paumelles apparentes</p>
-      <p>Pieds de meubles/pieds de table</p>
-      <p>Plan de travail</p>
-      <p>Plinthes</p>
-      <p>Poignées et boutons</p>
-      <p>Range épices/bouteilles</p>
-      <p>Serrures de meubles</p>
-      <p>Système de porte relevable</p>
-      <p>Taquet d’étagère</p>
-      <p>Tac équerre</p>
-      <p>Tiroir kit</p>
-    </div>
-  </div>
+  <h2>Ameublement</h2>
+  <!-- Contenu à venir -->
 </section>
-
-<script>
-  function toggle(id) {
-    const el = document.getElementById(id);
-    el.parentElement.classList.toggle('active');
-  }
-</script>
+<section id="fixations">
+  <h2>Fixations</h2>
+  <!-- Contenu à venir -->
+</section>
+<section id="colles">
+  <h2>Colles & Silicones</h2>
+  <!-- Contenu à venir -->
+</section>
+<section id="peintures">
+  <h2>Peintures</h2>
+  <!-- Contenu à venir -->
+</section>
+<section id="electro">
+  <h2>Électroportatif</h2>
+  <!-- Contenu à venir -->
+</section>
+<section id="serrurerie">
+  <h2>Serrurerie</h2>
+  <!-- Contenu à venir -->
+</section>
+<section id="autres">
+  <h2>Autres</h2>
+  <!-- Contenu à venir -->
+</section>
 
 </body>
 </html>
