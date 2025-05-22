@@ -24,16 +24,32 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem 2rem;
+      padding: 0.5rem 1rem;
       z-index: 1000;
+      flex-wrap: wrap;
+    }
+    .navbar .logo-title {
+      display: flex;
+      align-items: center;
     }
     .navbar img {
       height: 50px;
+      margin-right: 1rem;
+    }
+    .navbar .title-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: gold;
+    }
+    .navbar nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .navbar a {
       color: gold;
       text-decoration: none;
-      margin-left: 1.5rem;
+      margin: 0.5rem;
       font-weight: bold;
       transition: color 0.3s ease;
     }
@@ -92,13 +108,16 @@
 <body>
 
 <div class="navbar">
-  <img src="logo-transparent.png" alt="Logo Quinca Plus">
-  <div>
+  <div class="logo-title">
+    <img src="logo-transparent.png" alt="Logo Quinca Plus">
+    <div class="title-text">QUINCA PLUS</div>
+  </div>
+  <nav>
     <a href="#presentation">Présentation</a>
     <a href="#produits">Produits</a>
     <a href="#localisation">Localisation</a>
     <a href="#contact">Contact</a>
-  </div>
+  </nav>
 </div>
 
 <div class="scroll-title" id="scrollTitle">QUINCA PLUS</div>
