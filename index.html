@@ -12,12 +12,25 @@
       background: linear-gradient(to bottom right, #f9f9f9, #ececec);
       color: #333;
     }
+    .scroll-title {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) perspective(1000px);
+      font-size: 5rem;
+      color: #a60000;
+      font-weight: bold;
+      transition: transform 0.1s ease-out;
+      z-index: 1000;
+      pointer-events: none;
+    }
     header {
       display: flex;
       align-items: center;
       background-color: #a60000;
       padding: 1rem 2rem;
       color: gold;
+      margin-top: 60vh;
     }
     header img {
       height: 100px;
@@ -40,9 +53,10 @@
       color: #a60000;
     }
     .hero p {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 2rem;
       font-size: 1.1rem;
+      line-height: 1.6;
     }
     .btn {
       padding: 1rem 2rem;
@@ -70,6 +84,8 @@
 </head>
 <body>
 
+<div class="scroll-title" id="scrollTitle">QUINCA PLUS</div>
+
 <header>
   <img src="logo-transparent.png" alt="Logo Quinca Plus">
   <h1>QUINCA PLUS</h1>
@@ -78,19 +94,16 @@
 <section class="hero">
   <h2>Entreprise familiale depuis 1994</h2>
   <p>
-  Fondée par <strong>Joëlle Tholozan</strong>, une femme audacieuse et visionnaire, QUINCA PLUS est née en 1994 d’un simple rêve et d’une volonté de fer. Dans un monde de la quincaillerie largement dominé par les hommes, elle s’est lancée seule, avec seulement un peu d’argent, beaucoup de courage et une détermination inébranlable. Sans appui, sans associé, elle a bâti pierre par pierre une entreprise solide, respectée et incontournable.
-</p>
-<p>
-  Joëlle n’a pas hérité d’un empire, elle l’a créé. À force de persévérance, elle a su gagner la confiance des artisans, des bricoleurs et des professionnels du bâtiment. Elle a sélectionné les meilleurs produits, conseillé chaque client avec humanité, et imposé sa vision du service et de la qualité.
-</p>
-<p>
-  Aujourd’hui, QUINCA PLUS est bien plus qu’une simple quincaillerie : c’est une entreprise familiale fière de ses racines, à l’écoute de ses clients, portée par des valeurs de travail, d’exigence et d’authenticité. Que vous soyez professionnel ou particulier, vous trouverez chez nous une sélection pointue de produits pour le bâtiment, l’ameublement, la fixation, la peinture, les colles, l’électroportatif et bien plus encore.
-</p>
-<p>
-  Joëlle Tholozan a su transformer un petit local et un stock modeste en un véritable acteur de confiance dans sa région. Son parcours est une preuve éclatante qu’avec du cœur, du talent et de l’audace, on peut déplacer des montagnes.
-</p>
-
-
+    Fondée par <strong>Joëlle Tholozan</strong>, une femme audacieuse et visionnaire, QUINCA PLUS est née en 1994 d’un simple rêve et d’une volonté de fer. Dans un monde de la quincaillerie largement dominé par les hommes, elle s’est lancée seule, avec seulement un peu d’argent, beaucoup de courage et une détermination inébranlable. Sans appui, sans associé, elle a bâti pierre par pierre une entreprise solide, respectée et incontournable.
+  </p>
+  <p>
+    Joëlle n’a pas hérité d’un empire, elle l’a créé. À force de persévérance, elle a su gagner la confiance des artisans, des bricoleurs et des professionnels du bâtiment. Elle a sélectionné les meilleurs produits, conseillé chaque client avec humanité, et imposé sa vision du service et de la qualité.
+  </p>
+  <p>
+    Aujourd’hui, QUINCA PLUS est bien plus qu’une simple quincaillerie : c’est une entreprise familiale fière de ses racines, à l’écoute de ses clients, portée par des valeurs de travail, d’exigence et d’authenticité. Que vous soyez professionnel ou particulier, vous trouverez chez nous une sélection pointue de produits pour le bâtiment, l’ameublement, la fixation, la peinture, les colles, l’électroportatif et bien plus encore.
+  </p>
+  <p>
+    Joëlle Tholozan a su transformer un petit local et un stock modeste en un véritable acteur de confiance dans sa région. Son parcours est une preuve éclatante qu’avec du cœur, du talent et de l’audace, on peut déplacer des montagnes.
   </p>
   <a href="produits.html" class="btn">Voir nos produits</a>
 </section>
@@ -98,6 +111,16 @@
 <footer>
   &copy; 2025 QUINCA PLUS — Tous droits réservés.
 </footer>
+
+<script>
+  const title = document.getElementById('scrollTitle');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const rotateX = scrollY * 0.2;
+    const scale = 1 + scrollY / 1000;
+    title.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${rotateX}deg) scale(${scale})`;
+  });
+</script>
 
 </body>
 </html>
