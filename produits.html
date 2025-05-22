@@ -1,98 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produits - QUINCA PLUS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Produits - Quinca Plus</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom right, #f9f9f9, #ececec);
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
       color: #333;
     }
     header {
-      display: flex;
-      align-items: center;
       background-color: #a60000;
       padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
       color: gold;
     }
     header img {
-      height: 100px;
-      max-height: 100px;
-      margin-right: 2rem;
+      height: 60px;
+      margin-right: 1rem;
     }
     header h1 {
-      font-size: 3rem;
-      font-weight: 900;
+      font-size: 2rem;
       margin: 0;
-      text-transform: uppercase;
     }
-    .tabs {
+    nav {
+      background-color: #d4af37;
+      padding: 0.5rem 2rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      background-color: #d4af37;
+      gap: 1rem;
     }
-    .tabs button {
-      background: none;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      cursor: pointer;
+    nav a {
       color: #a60000;
+      text-decoration: none;
       font-weight: bold;
-      transition: all 0.3s ease;
     }
-    .tabs button:hover {
-      background-color: #a60000;
-      color: gold;
-      transform: scale(1.05);
-    }
-    .tab-content {
-      display: none;
+    section {
       padding: 2rem;
-      animation: fadeIn 0.4s ease;
+      max-width: 1000px;
+      margin: auto;
     }
-    .tab-content.active {
+    h2 {
+      color: #a60000;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 0.5rem;
+    }
+    .categorie {
+      margin-bottom: 2rem;
+    }
+    .sous-categories {
+      display: none;
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+    .categorie.active .sous-categories {
       display: block;
     }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li {
-      padding: 0.3rem 0;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-    ul li:hover {
-      transform: translateX(5px);
+    .categorie h3 {
+      cursor: pointer;
       color: #a60000;
     }
-    footer {
-      background-color: #a60000;
-      color: gold;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 768px) {
-      .tabs {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .tabs button {
-        width: 100%;
-        border-top: 1px solid #a60000;
-      }
+    .categorie h3:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -103,41 +77,61 @@
   <h1>QUINCA PLUS</h1>
 </header>
 
-<div class="tabs">
-  <button class="tablink" onclick="openTab(event, 'batiment')"><i class="fa-solid fa-building" style="margin-right: 0.5rem;"></i>Bâtiment</button>
-  <button class="tablink" onclick="openTab(event, 'ameublement')"><i class="fa-solid fa-couch" style="margin-right: 0.5rem;"></i>Ameublement</button>
-  <button class="tablink" onclick="openTab(event, 'colles')"><i class="fa-solid fa-fill-drip" style="margin-right: 0.5rem;"></i>Colles & Silicones</button>
-  <button class="tablink" onclick="openTab(event, 'peintures')"><i class="fa-solid fa-paint-roller" style="margin-right: 0.5rem;"></i>Peintures</button>
-  <button class="tablink" onclick="openTab(event, 'electroportatif')"><i class="fa-solid fa-tools" style="margin-right: 0.5rem;"></i>Électroportatif</button>
-  <button class="tablink" onclick="openTab(event, 'autres')"><i class="fa-solid fa-boxes-stacked" style="margin-right: 0.5rem;"></i>Autres</button>
-</div>
+<nav>
+  <a href="#batiment">Bâtiment</a>
+  <a href="#ameublement">Ameublement</a>
+  <a href="#fixations">Fixations</a>
+  <a href="#colles">Colles & Silicones</a>
+  <a href="#peintures">Peintures</a>
+  <a href="#electro">Électroportatif</a>
+  <a href="#serrurerie">Serrurerie</a>
+  <a href="#autres">Autres</a>
+</nav>
 
-<div id="default-message" style="text-align:center; padding: 3rem; font-size: 1.2rem; color: #a60000;">
-  <p>Bienvenue sur notre catalogue produits. Cliquez sur un onglet pour afficher une catégorie.</p>
-</div>
+<section id="batiment">
+  <div class="categorie">
+    <h2>Bâtiment</h2>
+    <h3 onclick="toggle('bat-sous')">Voir les sous-catégories</h3>
+    <div class="sous-categories" id="bat-sous">
+      <p>Fixation</p>
+      <p>Serrurerie</p>
+      <p>Poignée de porte</p>
+    </div>
+  </div>
+</section>
 
-<!-- Les contenus des onglets (Bâtiment, Ameublement, etc.) sont inchangés et doivent être ajoutés ici comme avant -->
-
-<footer>
-  &copy; 2025 QUINCA PLUS — Tous droits réservés.
-</footer>
+<section id="ameublement">
+  <div class="categorie">
+    <h2>Ameublement</h2>
+    <h3 onclick="toggle('ameublement-sous')">Voir les sous-catégories</h3>
+    <div class="sous-categories" id="ameublement-sous">
+      <p>Aménagement d’angle de cuisine</p>
+      <p>Charnières invisibles</p>
+      <p>Charnières plates</p>
+      <p>Console et crémaillère</p>
+      <p>Coulisses</p>
+      <p>Patin à clouer</p>
+      <p>Patin à vis réglable</p>
+      <p>Paumelles apparentes</p>
+      <p>Pieds de meubles/pieds de table</p>
+      <p>Plan de travail</p>
+      <p>Plinthes</p>
+      <p>Poignées et boutons</p>
+      <p>Range épices/bouteilles</p>
+      <p>Serrures de meubles</p>
+      <p>Système de porte relevable</p>
+      <p>Taquet d’étagère</p>
+      <p>Tac équerre</p>
+      <p>Tiroir kit</p>
+    </div>
+  </div>
+</section>
 
 <script>
-function openTab(evt, tabName) {
-  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tablink').forEach(el => el.classList.remove('active'));
-  document.getElementById(tabName).classList.add('active');
-  evt.currentTarget.classList.add('active');
-  const msg = document.getElementById('default-message');
-  if (msg) msg.style.display = 'none';
-}
-function toggleSubMenu(id) {
-  const submenu = document.getElementById(id);
-  if (submenu) {
-    submenu.style.display = (submenu.style.display === "none" || submenu.style.display === "") ? "block" : "none";
-    submenu.style.animation = "fadeIn 0.3s ease";
+  function toggle(id) {
+    const el = document.getElementById(id);
+    el.parentElement.classList.toggle('active');
   }
-}
 </script>
 
 </body>
