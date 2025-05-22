@@ -44,12 +44,13 @@
     .navbar nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-end;
+      flex: 1;
     }
     .navbar a {
       color: gold;
       text-decoration: none;
-      margin: 0.5rem;
+      margin: 0.5rem 0.5rem 0.5rem 1rem;
       font-weight: bold;
       transition: color 0.3s ease;
     }
@@ -74,6 +75,13 @@
       padding: 6rem 2rem;
       max-width: 1000px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     h2 {
       text-align: center;
@@ -103,6 +111,25 @@
       height: 300px;
       border: none;
     }
+    #scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #a60000;
+      color: gold;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      display: none;
+      z-index: 999;
+    }
+    #scroll-top:hover {
+      background-color: #d4af37;
+      color: #a60000;
+    }
   </style>
 </head>
 <body>
@@ -113,14 +140,17 @@
     <div class="title-text">QUINCA PLUS</div>
   </div>
   <nav>
-    <a href="#presentation">Présentation</a>
-    <a href="#produits">Produits</a>
-    <a href="#localisation">Localisation</a>
-    <a href="#contact">Contact</a>
+    <a href="#presentation"><i class="fa-solid fa-user"></i> Présentation</a>
+    <a href="#produits"><i class="fa-solid fa-box"></i> Produits</a>
+    <a href="#localisation"><i class="fa-solid fa-location-dot"></i> Localisation</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </nav>
 </div>
 
 <div class="scroll-title" id="scrollTitle">QUINCA PLUS</div>
+
+<!-- Vide pour forcer le scroll avant l'apparition de la présentation -->
+<div style="height: 100vh;"></div>
 
 <section id="presentation">
   <h2>Présentation</h2>
@@ -159,8 +189,13 @@
   &copy; 2025 QUINCA PLUS — Tous droits réservés.
 </footer>
 
+<button id="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Haut</button>
+
 <script>
   const title = document.getElementById('scrollTitle');
+  const scrollBtn = document.getElementById('scroll-top');
+  const sections = document.querySelectorAll('section');
+
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const rotateX = scrollY * 0.2;
@@ -168,6 +203,15 @@
     const opacity = Math.max(1 - scrollY / 400, 0);
     title.style.transform = `translate(-50%, -50%) perspective(800px) rotateX(${rotateX}deg) scale(${scale})`;
     title.style.opacity = opacity;
+
+    scrollBtn.style.display = scrollY > 300 ? 'block' : 'none';
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        section.classList.add('visible');
+      }
+    });
   });
 </script>
 
