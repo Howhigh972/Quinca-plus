@@ -3,14 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QUINCA PLUS - Accueil</title>
+  <title>QUINCA PLUS</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(to bottom right, #f9f9f9, #ececec);
       color: #333;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #a60000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2rem;
+      z-index: 1000;
+    }
+    .navbar img {
+      height: 50px;
+    }
+    .navbar a {
+      color: gold;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #fff;
     }
     .scroll-title {
       position: fixed;
@@ -21,78 +49,60 @@
       color: #a60000;
       font-weight: bold;
       transition: transform 0.1s ease-out;
-      z-index: 1000;
+      z-index: 900;
       pointer-events: none;
     }
-    header {
-      display: flex;
-      align-items: center;
-      background-color: #a60000;
-      padding: 1rem 2rem;
-      color: gold;
-      margin-top: 60vh;
+    section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    header img {
-      height: 100px;
-      max-height: 100px;
-      margin-right: 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      margin: 0;
-      text-transform: uppercase;
-    }
-    .hero {
+    h2 {
       text-align: center;
-      padding: 4rem 2rem;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
       color: #a60000;
-    }
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
+      margin-bottom: 2rem;
     }
     .btn {
+      display: inline-block;
       padding: 1rem 2rem;
       background-color: #d4af37;
       color: #a60000;
-      border: none;
       font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
       text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: transform 0.3s ease;
     }
     .btn:hover {
-      background-color: #a60000;
-      color: gold;
       transform: scale(1.05);
     }
     footer {
-      text-align: center;
-      padding: 2rem;
       background-color: #a60000;
       color: gold;
+      text-align: center;
+      padding: 2rem;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
     }
   </style>
 </head>
 <body>
 
+<div class="navbar">
+  <img src="logo-transparent.png" alt="Logo Quinca Plus">
+  <div>
+    <a href="#presentation">Présentation</a>
+    <a href="#produits">Produits</a>
+    <a href="#localisation">Localisation</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
 <div class="scroll-title" id="scrollTitle">QUINCA PLUS</div>
 
-<header>
-  <img src="logo-transparent.png" alt="Logo Quinca Plus">
-  <h1>QUINCA PLUS</h1>
-</header>
-
-<section class="hero">
-  <h2>Entreprise familiale depuis 1994</h2>
+<section id="presentation">
+  <h2>Présentation</h2>
   <p>
     Fondée par <strong>Joëlle Tholozan</strong>, une femme audacieuse et visionnaire, QUINCA PLUS est née en 1994 d’un simple rêve et d’une volonté de fer. Dans un monde de la quincaillerie largement dominé par les hommes, elle s’est lancée seule, avec seulement un peu d’argent, beaucoup de courage et une détermination inébranlable. Sans appui, sans associé, elle a bâti pierre par pierre une entreprise solide, respectée et incontournable.
   </p>
@@ -105,7 +115,23 @@
   <p>
     Joëlle Tholozan a su transformer un petit local et un stock modeste en un véritable acteur de confiance dans sa région. Son parcours est une preuve éclatante qu’avec du cœur, du talent et de l’audace, on peut déplacer des montagnes.
   </p>
-  <a href="produits.html" class="btn">Voir nos produits</a>
+</section>
+
+<section id="produits">
+  <h2>Nos Produits</h2>
+  <p>Découvrez notre gamme complète : Bâtiment, Ameublement, Fixations, Colles & Silicones, Peintures, Électroportatif, Serrurerie et plus encore.</p>
+  <a href="#contact" class="btn">Nous contacter</a>
+</section>
+
+<section id="localisation">
+  <h2>Où nous trouver ?</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7457325976293!2d-61.022902124848555!3d14.598062385891558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c40c92e3040f25d%3A0x82fa5143c7d75a0b!2sQuincaillerie%20Zone%20Industrielle%20Cocotte%20Canal%2C%20Ducos!5e0!3m2!1sfr!2sfr!4v1716379558947!5m2!1sfr!2sfr" allowfullscreen=""></iframe>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email : <a href="mailto:contact.quincaplus@gmail.com">contact.quincaplus@gmail.com</a></p>
+  <p>Téléphone : <a href="tel:+596596564026">0596 56 40 26</a></p>
 </section>
 
 <footer>
