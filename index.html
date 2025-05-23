@@ -116,13 +116,37 @@
       margin: 0.5rem 0 0.2rem;
       color: #a60000;
     }
-  </style>
+      .hero-title {
+      font-size: 4rem;
+      color: gold;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(to right, #a60000, #a60000 90%, gold);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      margin-top: 1rem;
+    }
+    .scroll-title {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) perspective(800px);
+      font-size: 6rem;
+      font-weight: 900;
+      color: gold;
+      
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+      z-index: 900;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+</style>
 </head>
 <body>
 <header>
   <img src="logo-transparent.png" alt="Logo Quinca Plus">
-  <h1>Quinca Plus</h1>
 </header>
+<div class="scroll-title">QUINCA PLUS</div>
 
 <div class="container">
   <aside class="sidebar" id="sidebar">
@@ -132,7 +156,21 @@
     </ul>
   </aside>
   <main class="content">
-    <!-- Contenu des produits ici -->
+    <section id="presentation" style="margin-top: 20rem;">
+      <h2>Présentation</h2>
+      <p>QUINCA PLUS, c’est avant tout l’histoire d’une femme exceptionnelle : Joëlle Tholozan. En 1994, armée de courage et d’une détermination sans faille, elle se lance dans l’univers très masculin de la quincaillerie, sans gros moyens, mais avec une passion immense pour le métier. Elle crée seule son entreprise dans la zone industrielle de Ducos, et réussit à imposer QUINCA PLUS comme une référence locale.</p>
+      <p>Entreprise familiale profondément ancrée dans le tissu économique martiniquais, QUINCA PLUS accompagne depuis plus de 30 ans aussi bien les professionnels que les particuliers. Notre force repose sur notre sérieux, notre proximité, notre réactivité, mais aussi sur la diversité de nos produits sélectionnés avec soin. De la petite vis au produit technique, nous avons su répondre aux besoins de milliers de clients avec constance et professionnalisme.</p>
+      <p>Fidèle à ses valeurs, QUINCA PLUS continue d’évoluer, tout en restant une entreprise humaine, à taille réelle, portée par l’héritage d’une femme visionnaire. Chez nous, on ne vend pas seulement de la quincaillerie, on partage un savoir-faire et une histoire.</p>
+      <div id="contact" style="margin-top: 2rem;">
+        <h3>Contact</h3>
+        <p>Adresse : Zone industrielle Cocotte Canal, 97224 Ducos</p>
+        <p>Email : <a href="mailto:contact.quincaplus@gmail.com">contact.quincaplus@gmail.com</a></p>
+        <p>Téléphone : <a href="tel:+596596564026">0596 56 40 26</a></p>
+        <p><i class="fa-brands fa-whatsapp" style="color: green;"></i> WhatsApp : <a href="https://wa.me/596696303995" style="color: inherit; text-decoration: none;">0696 30 39 95</a></p>
+      </div>
+    </section>
+
+    
   </main>
 </div>
 <script>
@@ -145,5 +183,16 @@
   }
 </script>
 
+<script>
+  const title = document.querySelector('.scroll-title');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const rotateX = scrollY * 0.2;
+    const scale = 1 + scrollY / 1000;
+    const opacity = Math.max(1 - scrollY / 400, 0);
+    title.style.transform = `translate(-50%, -50%) perspective(800px) rotateX(${rotateX}deg) scale(${scale})`;
+    title.style.opacity = opacity;
+  });
+</script>
 </body>
 </html>
