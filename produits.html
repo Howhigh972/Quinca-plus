@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QUINCA PLUS</title>
+  <title>Quinca Plus</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,7 +14,7 @@
     }
     header {
       background-color: #a60000;
-      padding: 2rem 1rem;
+      padding: 1rem 1rem;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -21,29 +22,37 @@
       justify-content: center;
     }
     header img {
-      height: 80px;
-      margin-bottom: 1rem;
+      height: 60px;
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 2rem;
       color: gold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      text-shadow: 1px 1px 2px #000;
     }
-      .container {
+    .container {
       display: flex;
     }
     .sidebar {
-      width: 200px;
+      width: 50px;
+      height: auto;
+      overflow: hidden;
+      transition: width 0.3s ease;
       background-color: #e0e0e0;
-      padding: 1rem;
-      min-height: calc(100vh - 160px);
+      padding: 1rem 0.5rem;
+    }
+    .sidebar button {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin: 0 auto 1rem;
     }
     .sidebar ul {
       list-style: none;
-      padding: 0;
+      padding-left: 0;
+      display: none;
+      transition: opacity 0.3s ease;
     }
     .sidebar li {
       margin: 1rem 0;
@@ -60,34 +69,81 @@
       flex: 1;
       padding: 2rem;
     }
-
+    
+    section {
+      padding: 6rem 2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      color: #a60000;
+    }
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .scroll-title {
+        font-size: 2.5rem;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) perspective(800px);
+        width: auto;
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+      .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .product-card h3 {
+      margin: 0.5rem 0 0.2rem;
+      color: #a60000;
+    }
+  </style>
 </head>
 <body>
-
 <header>
   <img src="logo-transparent.png" alt="Logo Quinca Plus">
   <h1>Quinca Plus</h1>
 </header>
 
 <div class="container">
-  <aside class="sidebar">
-    <ul>
-      <li><a href="#promotions">Promotions</a></li>
-      <li><a href="#batiment">Bâtiment</a></li>
-      <li><a href="#ameublement">Ameublement</a></li>
-      <li><a href="#fixations">Fixations</a></li>
-      <li><a href="#colles">Colles & Silicones</a></li>
-      <li><a href="#peintures">Peintures</a></li>
-      <li><a href="#electro">Électroportatif</a></li>
-      <li><a href="#serrurerie">Serrurerie</a></li>
-      <li><a href="#autres">Autres</a></li>
+  <aside class="sidebar" id="sidebar">
+    <button onclick="toggleSidebarMenu()">☰</button>
+    <ul id="sidebar-menu">
+      <li><a href="#catalogue">Catalogue</a></li>
     </ul>
   </aside>
   <main class="content">
-    <h2>Bienvenue dans notre catalogue produits</h2>
-    <p>Sélectionnez une catégorie dans le menu à gauche pour afficher les produits correspondants.</p>
+    <!-- Contenu des produits ici -->
   </main>
 </div>
+<script>
+  function toggleSidebarMenu() {
+    const menu = document.getElementById('sidebar-menu');
+    const sidebar = document.getElementById('sidebar');
+    const isVisible = menu.style.display === 'block';
+    menu.style.display = isVisible ? 'none' : 'block';
+    sidebar.style.width = isVisible ? '50px' : '130px';
+  }
+</script>
 
 </body>
 </html>
