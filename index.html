@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #f9f9f9;
+      background: linear-gradient(to bottom, #fff, #f0f0f0);
     }
     header {
       background-color: #a60000;
@@ -20,31 +20,55 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     header img {
-      height: 60px;
+      height: 70px;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+    }
+    nav {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #a60000;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: #ffcc00;
     }
     .scroll-title {
       position: fixed;
-      top: 50%;
+      top: 20%;
       left: 50%;
-      transform: translate(-50%, -50%) perspective(800px);
-      font-size: 6rem;
+      transform: translate(-50%, -50%) perspective(1000px);
+      font-size: 5rem;
       font-weight: 900;
       color: gold;
-      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
       z-index: 900;
       pointer-events: none;
       white-space: nowrap;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) perspective(1000px) scale(1); }
+      50% { transform: translate(-50%, -50%) perspective(1000px) scale(1.05); }
     }
     @media (max-width: 600px) {
       .scroll-title {
-        font-size: 2rem;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%) perspective(800px);
-        text-align: center;
-        white-space: nowrap;
+        font-size: 2.2rem;
+        top: 25%;
       }
       header {
         padding: 1.5rem 0.5rem;
@@ -58,11 +82,20 @@
     }
     main {
       padding: 8rem 2rem 4rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
+      animation: fadein 1s ease-in-out;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     section {
       margin-bottom: 3rem;
+      background: #ffffffee;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     section h2 {
       color: #a60000;
@@ -72,9 +105,13 @@
     section p {
       font-size: 1.1rem;
       line-height: 1.6;
+      text-align: justify;
     }
     #contact p {
       margin: 0.3rem 0;
+    }
+    a {
+      color: #a60000;
     }
   </style>
 </head>
@@ -84,6 +121,12 @@
       <img src="logo-transparent.png" alt="Logo Quinca Plus">
     </a>
   </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="produits.html">Produits</a>
+    <a href="#contact">Nous contacter</a>
+  </nav>
 
   <div class="scroll-title">QUINCA PLUS</div>
 
@@ -105,14 +148,14 @@
   </main>
 
   <script>
-    const title = document.querySelector('.scroll-title');
+    const scrollingTitle = document.querySelector('.scroll-title');
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const rotateX = scrollY * 0.2;
       const scale = 1 + scrollY / 1000;
       const opacity = Math.max(1 - scrollY / 400, 0);
-      title.style.transform = `translate(-50%, -50%) perspective(800px) rotateX(${rotateX}deg) scale(${scale})`;
-      title.style.opacity = opacity;
+      scrollingTitle.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${rotateX}deg) scale(${scale})`;
+      scrollingTitle.style.opacity = opacity;
     });
   </script>
 </body>
