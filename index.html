@@ -109,13 +109,18 @@
 <div class="scroll-title">QUINCA PLUS</div>
 
 <div class="container">
-  <aside class="sidebar" style="width: 150px;">
-    <ul>
-      <li><a href="#presentation">Présentation</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#catalogue">Catalogue</a></li>
-    </ul>
-  </aside>
+  <aside class="sidebar" style="width: 120px;">
+  <button onclick="toggleMenu()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;margin-bottom:1rem;">☰</button>
+  <ul id="sidebar-menu" style="display:none;">
+    <li><a href="#catalogue">Catalogue</a></li>
+  </ul>
+</aside>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('sidebar-menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
   <main class="content">
     
   </main>
@@ -125,6 +130,11 @@
   <h2>Présentation</h2>
   <p>Fondée en 1994 par Joëlle Tholozan, QUINCA PLUS est une entreprise familiale martiniquaise de quincaillerie qui s’est imposée dans un univers d’hommes grâce au courage et à la détermination d’une femme visionnaire.</p>
   <p>Partie de rien, avec peu de moyens mais une passion immense pour le métier, elle a su construire un commerce de proximité solide, réputé pour son sérieux et sa relation client.</p>
+  <div id="contact" style="margin-top: 2rem;">
+    <h3>Contact</h3>
+    <p>Email : <a href="mailto:contact.quincaplus@gmail.com">contact.quincaplus@gmail.com</a></p>
+    <p>Téléphone : 0596 56 40 26</p>
+  </div>
 </section>
 
 <script>
