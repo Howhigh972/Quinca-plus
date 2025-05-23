@@ -3,89 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QUINCA PLUS - Produits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <title>QUINCA PLUS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background-color: #f9f9f9;
-      color: #333;
     }
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: #a60000;
+    header {
+      background-color: #a60000;
+      padding: 2rem 1rem;
+      text-align: center;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 0.5rem 1rem;
-      z-index: 1000;
-      flex-wrap: wrap;
+      justify-content: center;
     }
-    .logo-title {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 1rem;
+    header img {
+      height: 80px;
+      margin-bottom: 1rem;
     }
-    .logo-title img {
-      height: 50px;
-    }
-    .title-text {
-      font-size: 1.2rem;
-      font-weight: 700;
+    header h1 {
+      font-size: 3rem;
       color: gold;
-    }
-    nav {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: gold;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-      @media (max-width: 600px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .logo-title {
-        justify-content: center;
-        margin-bottom: 0.5rem;
-      }
-      .title-text {
-        font-size: 1rem;
-        text-align: center;
-      }
-      nav {
-        justify-content: center;
-        width: 100%;
-      }
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
   </style>
 </head>
 <body>
 
-<div class="navbar">
-  <div class="logo-title">
-    <img src="logo-transparent.png" alt="Logo Quinca Plus">
-    <div class="title-text">QUINCA PLUS</div>
-  </div>
-  <nav>
-    <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
-  </nav>
-</div>
+<header>
+  <img src="logo-transparent.png" alt="Logo Quinca Plus">
+  <h1>Quinca Plus</h1>
+</header>
 
 </body>
 </html>
