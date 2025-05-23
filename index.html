@@ -52,7 +52,11 @@
       color: #ffcc00;
     }
     @media (max-width: 600px) {
-      header {
+      header div {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
         flex-direction: column;
         gap: 0.5rem;
         text-align: center;
@@ -98,10 +102,12 @@
 </head>
 <body>
   <header>
-    <a href="index.html">
-      <img src="logo-transparent.png" alt="Logo Quinca Plus">
-    </a>
-    <h1>QUINCA PLUS</h1>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; width: 100%; max-width: 1200px; margin: auto;">
+      <a href="index.html">
+        <img src="logo-transparent.png" alt="Logo Quinca Plus">
+      </a>
+      <h1>QUINCA PLUS</h1>
+    </div>
   </header>
 
   <nav>
