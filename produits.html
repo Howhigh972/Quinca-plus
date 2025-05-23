@@ -32,7 +32,35 @@
       text-transform: uppercase;
       letter-spacing: 2px;
     }
-  </style>
+      .container {
+      display: flex;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #e0e0e0;
+      padding: 1rem;
+      min-height: calc(100vh - 160px);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin: 1rem 0;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .sidebar a:hover {
+      color: #a60000;
+    }
+    .content {
+      flex: 1;
+      padding: 2rem;
+    }
+
 </head>
 <body>
 
@@ -40,6 +68,26 @@
   <img src="logo-transparent.png" alt="Logo Quinca Plus">
   <h1>Quinca Plus</h1>
 </header>
+
+<div class="container">
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#promotions">Promotions</a></li>
+      <li><a href="#batiment">Bâtiment</a></li>
+      <li><a href="#ameublement">Ameublement</a></li>
+      <li><a href="#fixations">Fixations</a></li>
+      <li><a href="#colles">Colles & Silicones</a></li>
+      <li><a href="#peintures">Peintures</a></li>
+      <li><a href="#electro">Électroportatif</a></li>
+      <li><a href="#serrurerie">Serrurerie</a></li>
+      <li><a href="#autres">Autres</a></li>
+    </ul>
+  </aside>
+  <main class="content">
+    <h2>Bienvenue dans notre catalogue produits</h2>
+    <p>Sélectionnez une catégorie dans le menu à gauche pour afficher les produits correspondants.</p>
+  </main>
+</div>
 
 </body>
 </html>
