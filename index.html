@@ -109,20 +109,19 @@
 <div class="scroll-title">QUINCA PLUS</div>
 
 <div class="container">
-  <aside class="sidebar" id="sidebar" style="width: 50px; overflow: hidden; transition: width 0.3s ease; background-color: #e0e0e0; min-height: calc(100vh - 160px); padding: 1rem 0.5rem;">
-  <button onclick="toggleMenu()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;margin-bottom:1rem;">☰</button>
-  <ul id="sidebar-menu" style="opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">
+  <aside class="sidebar" id="sidebar" style="width: 50px; height: auto; overflow: hidden; transition: width 0.3s ease; background-color: #e0e0e0; padding: 1rem 0.5rem;">
+  <button onclick="toggleSidebarMenu()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;margin-bottom:1rem;">☰</button>
+  <ul id="sidebar-menu" style="display: none; transition: opacity 0.3s ease; list-style: none; padding-left: 0;">
     <li style="margin: 1rem 0;"><a href="#catalogue" style="text-decoration: none; color: #333; font-weight: bold;">Catalogue</a></li>
   </ul>
 </aside>
 <script>
-  function toggleMenu() {
+  function toggleSidebarMenu() {
     const menu = document.getElementById('sidebar-menu');
     const sidebar = document.getElementById('sidebar');
-    const isOpen = menu.style.opacity === '1';
-    menu.style.opacity = isOpen ? '0' : '1';
-    menu.style.pointerEvents = isOpen ? 'none' : 'auto';
-    sidebar.style.width = isOpen ? '50px' : '120px';
+    const isVisible = menu.style.display === 'block';
+    menu.style.display = isVisible ? 'none' : 'block';
+    sidebar.style.width = isVisible ? '50px' : '130px';
   }
 </script>
 <script>
