@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>$1
+<head>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
@@ -90,7 +90,38 @@
     transform: translate(-50%, -50%) perspective(800px);
     text-align: center;
     white-space: nowrap;
+    width: 100vw;
   }
+  header img {
+    height: 60px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 50px !important;
+    display: block;
+    height: auto;
+    padding: 0.5rem;
+    overflow: hidden;
+  }
+  .sidebar ul {
+    display: block;
+    padding: 0;
+  }
+  .sidebar li {
+    margin: 0;
+  }
+  .content {
+    padding: 1rem;
+  }
+  section {
+    padding: 2rem 1rem;
+  }
+}
   header img {
     height: 60px;
   }
@@ -231,7 +262,7 @@
 
 <div class="container">
   <aside class="sidebar" id="sidebar" style="width: 50px; height: auto; overflow: hidden; transition: width 0.3s ease; background-color: #e0e0e0; padding: 1rem 0.5rem;">
-  <button onclick="toggleSidebarMenu()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;margin-bottom:1rem;">☰</button>
+  <button onclick="toggleSidebarMenu()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;margin: 0 auto 1rem; display: block;">☰</button>
   <ul id="sidebar-menu" style="display: none; transition: opacity 0.3s ease; list-style: none; padding-left: 0;">
     <li style="margin: 1rem 0;"><a href="#catalogue" style="text-decoration: none; color: #333; font-weight: bold;">Catalogue</a></li>
   </ul>
