@@ -10,7 +10,14 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: radial-gradient(circle at top left, #fff, #f0f0f0);
+      background: linear-gradient(-45deg, #ffffff, #f5f5f5, #fff0f0, #f0f0ff);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     header {
       background: linear-gradient(to right, #a60000, #730000);
@@ -41,6 +48,14 @@
       color: gold;
       text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
       margin: 0;
+      background: linear-gradient(90deg, gold, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+    }
+    @keyframes shine {
+      0% { background-position: -500px; }
+      100% { background-position: 500px; }
     }
     nav {
       background-color: #fff;
@@ -96,20 +111,30 @@
     }
     section {
       margin-bottom: 3rem;
-      background: #ffffffee;
+      background: #ffffffdd;
       border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
     section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+      transform: scale(1.015);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.2);
     }
     section h2 {
       color: #a60000;
       text-align: center;
       margin-bottom: 1rem;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      display: block;
+      margin: 0.5rem auto 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #a60000, gold);
+      border-radius: 2px;
     }
     section p {
       font-size: 1.1rem;
