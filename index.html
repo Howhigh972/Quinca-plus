@@ -13,7 +13,7 @@
     }
     header {
       background-color: #a60000;
-      padding: 2rem 1rem;
+      padding: 1rem 1rem;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -84,6 +84,16 @@
     section p {
       font-size: 1.1rem;
       line-height: 1.6;
+    }
+      @media (max-width: 600px) {
+      .scroll-title {
+        font-size: 3.5rem;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%) perspective(800px);
+        text-align: center;
+        white-space: nowrap;
+      }
     }
   </style>
 
