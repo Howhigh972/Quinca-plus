@@ -109,12 +109,21 @@
 <div class="scroll-title">QUINCA PLUS</div>
 
 <div class="container">
-  <aside class="sidebar" style="width: 120px;">
+  <aside class="sidebar" id="sidebar" style="width: 50px; overflow: hidden; transition: width 0.3s ease;">
   <button onclick="toggleMenu()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;margin-bottom:1rem;">☰</button>
   <ul id="sidebar-menu" style="display:none;">
     <li><a href="#catalogue">Catalogue</a></li>
   </ul>
 </aside>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('sidebar-menu');
+    const sidebar = document.getElementById('sidebar');
+    const isOpen = menu.style.display === 'block';
+    menu.style.display = isOpen ? 'none' : 'block';
+    sidebar.style.width = isOpen ? '50px' : '150px';
+  }
+</script>
 <script>
   function toggleMenu() {
     const menu = document.getElementById('sidebar-menu');
