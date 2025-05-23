@@ -14,7 +14,7 @@
     }
     header {
       background-color: #a60000;
-      padding: 1rem 1rem;
+      padding: 2rem 1rem;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -29,121 +29,66 @@
       color: gold;
       text-shadow: 1px 1px 2px #000;
     }
-    .container {
-      display: flex;
-    }
-    .sidebar {
-      width: 50px;
-      height: auto;
-      overflow: hidden;
-      transition: width 0.3s ease;
-      background-color: #e0e0e0;
-      padding: 1rem 0.5rem;
-    }
-    .sidebar button {
-      display: block;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      margin: 0 auto 1rem;
-    }
-    .sidebar ul {
-      list-style: none;
-      padding-left: 0;
-      display: none;
-      transition: opacity 0.3s ease;
-    }
-    .sidebar li {
-      margin: 1rem 0;
-    }
-    .sidebar a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    .sidebar a:hover {
-      color: #a60000;
-    }
     .content {
       flex: 1;
       padding: 2rem;
     }
-    
     section {
-      padding: 6rem 2rem;
-      max-width: 700px;
+      padding: 4rem 2rem;
+      max-width: 1000px;
       margin: auto;
     }
     section h2 {
       text-align: center;
       color: #a60000;
     }
-    section p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    @media (max-width: 600px) {
-      .scroll-title {
-        font-size: 2.5rem;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%) perspective(800px);
-        width: auto;
-        text-align: center;
-        white-space: nowrap;
-      }
-    }
-      .product-grid {
+    .category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
       margin-top: 2rem;
     }
-    .product-card {
-      background: #fff;
-      border-radius: 8px;
+    .category-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
+      background: #a60000;
+      color: gold;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .product-card img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
-    .product-card h3 {
-      margin: 0.5rem 0 0.2rem;
-      color: #a60000;
+    .category-card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
 <header>
-  <img src="logo-transparent.png" alt="Logo Quinca Plus">
-  <h1>Quinca Plus</h1>
+  <a href="index.html"><img src="logo-transparent.png" alt="Logo Quinca Plus"></a>
 </header>
-
-<div class="container">
-  <aside class="sidebar" id="sidebar">
-    <button onclick="toggleSidebarMenu()">☰</button>
-    <ul id="sidebar-menu">
-      <li><a href="#catalogue">Catalogue</a></li>
-    </ul>
-  </aside>
-  <main class="content">
-    <!-- Contenu des produits ici -->
-  </main>
-</div>
-<script>
-  function toggleSidebarMenu() {
-    const menu = document.getElementById('sidebar-menu');
-    const sidebar = document.getElementById('sidebar');
-    const isVisible = menu.style.display === 'block';
-    menu.style.display = isVisible ? 'none' : 'block';
-    sidebar.style.width = isVisible ? '50px' : '130px';
-  }
-</script>
-
+<main class="content">
+  <section id="catalogue">
+    <h2 style="font-size: 2.5rem; text-align: center; color: #a60000; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Nos catégories</h2>
+    <div class="category-grid">
+      <a href="#promotions" class="category-card"><i class="fa-solid fa-tags"></i><span>Promotions</span></a>
+      <a href="#batiment" class="category-card"><i class="fa-solid fa-building"></i><span>Bâtiment</span></a>
+      <a href="#ameublement" class="category-card"><i class="fa-solid fa-couch"></i><span>Ameublement</span></a>
+      <a href="#fixations" class="category-card"><i class="fa-solid fa-screwdriver-wrench"></i><span>Fixations</span></a>
+      <a href="#electricite" class="category-card"><i class="fa-solid fa-bolt"></i><span>Électricité</span></a>
+      <a href="#plomberie" class="category-card"><i class="fa-solid fa-faucet"></i><span>Plomberie</span></a>
+    </div>
+  </section>
+</main>
 </body>
 </html>
