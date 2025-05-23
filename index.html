@@ -60,7 +60,32 @@
       flex: 1;
       padding: 2rem;
     }
-  </style>
+  .scroll-title {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) perspective(800px);
+      font-size: 6rem;
+      color: #a60000;
+      font-weight: 900;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 900;
+      pointer-events: none;
+    }
+    section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      color: #a60000;
+    }
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
 
 </head>
 <body>
@@ -70,19 +95,7 @@
   <h1>Quinca Plus</h1>
 </header>
 
-<div style="text-align:center; margin-top: 2rem;">
-  <a href="produits.html" style="
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #d4af37;
-    color: #a60000;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  ">Voir les Produits</a>
-</div>
+<div class="scroll-title">QUINCA PLUS</div>
 
 <div class="container">
   <aside class="sidebar">
@@ -102,6 +115,25 @@
     <h2>Bienvenue dans notre catalogue produits</h2>
     <p>Sélectionnez une catégorie dans le menu à gauche pour afficher les produits correspondants.</p>
   </main>
+</div>
+
+<section id="presentation">
+  <h2>Présentation</h2>
+  <p>Fondée en 1994 par Joëlle Tholozan, QUINCA PLUS est une entreprise familiale martiniquaise de quincaillerie qui s’est imposée dans un univers d’hommes grâce au courage et à la détermination d’une femme visionnaire.</p>
+  <p>Partie de rien, avec peu de moyens mais une passion immense pour le métier, elle a su construire un commerce de proximité solide, réputé pour son sérieux et sa relation client.</p>
+</section>
+
+<script>
+  const title = document.querySelector('.scroll-title');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const rotateX = scrollY * 0.2;
+    const scale = 1 + scrollY / 1000;
+    const opacity = Math.max(1 - scrollY / 400, 0);
+    title.style.transform = `translate(-50%, -50%) perspective(800px) rotateX(${rotateX}deg) scale(${scale})`;
+    title.style.opacity = opacity;
+  });
+</script>
 </div>
 
 </body>
