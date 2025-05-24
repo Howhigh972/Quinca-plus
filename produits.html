@@ -157,8 +157,13 @@
         font-size: 2rem;
       }
       nav {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
+      }
+      .products {
+        grid-template-columns: 1fr;
       }
       .products {
         grid-template-columns: 1fr;
