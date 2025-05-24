@@ -37,6 +37,10 @@
     header img {
       height: 70px;
       filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+    }
+    header img:hover {
+      transform: rotate(-5deg) scale(1.05);
     }
     header h1 {
       font-size: 3rem;
@@ -97,6 +101,8 @@
       text-align: center;
       color: #a60000;
       margin-bottom: 2rem;
+      text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold;
+      animation: glow 2s infinite alternate;
     }
     .products {
       display: grid;
@@ -126,11 +132,16 @@
     .product h3 {
       color: #a60000;
       margin: 0.5rem 0 0.2rem;
-    }
+      text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold;
+      animation: glow 2s infinite alternate;
     .product p {
       margin: 0;
       font-size: 0.9rem;
       color: #444;
+    }
+  @keyframes glow {
+      from { text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold; }
+      to { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
     }
   </style>
 </head>
