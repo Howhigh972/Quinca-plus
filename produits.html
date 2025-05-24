@@ -143,6 +143,25 @@
       from { text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold; }
       to { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
     }
+      to { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
+    }
+      @media (max-width: 600px) {
+      header .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
